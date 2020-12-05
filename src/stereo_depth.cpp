@@ -204,9 +204,8 @@ public:
         cv::Mat im1, im2;
         if (scale_ != 1.0)
         {
-            cv::Size size;
-            cv::resize(left_cv_ptr->image, im1, size, scale_, scale_, cv::INTER_LINEAR);
-            cv::resize(right_cv_ptr->image, im2, size, scale_, scale_, cv::INTER_LINEAR);
+            cv::resize(left_cv_ptr->image, im1, cv::Size(), scale_, scale_, cv::INTER_LINEAR);
+            cv::resize(right_cv_ptr->image, im2, cv::Size(), scale_, scale_, cv::INTER_LINEAR);
         } else
         {
             im1 = left_cv_ptr->image;
